@@ -1,0 +1,174 @@
+/** Card specifications and Informations Container **/
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 2.5rem 3.75rem 1.875rem  2.5rem;
+    padding: 2rem;
+    align-items: center;
+
+    border-radius: 20px;
+    
+    background-color: var(--bg-cards);
+
+}
+
+/** Profile **/
+header.card {
+    width: 21.875rem;
+    height: 18.75;
+}
+
+.profile-img img {
+    display: block;
+    
+    max-width: 100%;
+    width: 8rem;
+    height: 8rem;
+    
+    margin: 0 auto;
+ 
+    border-radius: 50%;
+    border: 2px solid #00FF00;
+}
+
+.header-content {
+    text-align: center;
+}
+
+h2.header-content {
+    font-weight: 700;
+}
+
+p.header-content {
+    font-size: .8125rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/** Contacts **/
+.contacts {
+    width: 21.875rem;
+}
+
+.contacts.card {
+    align-items: flex-start;
+    
+}
+.contacts-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    
+    margin-right: 1.25rem;
+}
+
+/** Tech **/
+
+.tech {
+    width: 21.875rem;
+   
+}
+
+.tech-content {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.tech h2 {
+    align-self: flex-start;
+}
+
+.tech-content a {
+    display: block;
+    width: 80px;
+    
+    text-align: center;
+
+    margin-left: 1rem;
+    padding: 0.5rem;
+
+    background-color: var(--bg-techs);
+    color: #000;
+    border-radius: 30px;
+    
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/** Main Container **/
+
+.main-container {
+   
+    grid-column: 2 / -1;
+
+    margin: 2.5rem 1.875rem 3.75rem 2.5rem;
+}
+
+.main-container header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    margin: 0 auto;
+    background-color: var(--bg-cards);
+    border-radius: 4px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.loading {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.loading img {
+    max-width: 100px;
+}
+
+.card-project.card {
+    margin: 0;
+    margin-top: 1rem;
+    align-items: flex-start;
+}
+
+.repository-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.repository-name span {
+    margin-left: 1rem;
+}
+
+
+.information-repository {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.star, .branch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branch {
+    margin-left: 1rem;
+}
