@@ -8,31 +8,30 @@ async function getRepos() {
     }
 }
 
-
 async function createCards() {
     const cardContainer = document.querySelector(".card-container")
     cardContainer.innerHTML = `<div class="loading">
                                 <img  src="./assets/loading.gif" />
                                 </div>`
     const repositories = await getRepos();
-    console.log(cardContainer)
-    console.log(repositories)
     let html = ""
     repositories.forEach(async repository => {
         const branchNumber = await getBranchsNumber(repository.name);
         html += createCardProject(repository, branchNumber);
-    })
-    cardContainer.innerHTML = html;
-    console.log(html)
-    console.log(cardContainer)
-       
+        cardContainer.innerHTML = html;
+    })   
 }
 
 async function getBranchsNumber(repositoryName) {
     try {
-        let numberBranchs;
-        await fetch(`https://api.github.com/repos/emanamoura/${repositoryName}/branches`) .then(response => response.json()) .then(data => { numberBranchs = data})
-        return numberBranchs;
+        let branchs;
+        await fetch(`https://api.github.com/repos/emanamoura/${repositoryName}/branches`)
+            .then(response => response.json())
+            .then(data => {
+            branchs = data;
+        }
+        );
+        return branchs.length;
     } catch(error) {
         return "Error getting number of branchs!"
     }
@@ -60,7 +59,7 @@ function createCardProject(repository, branchNumber) {
                             <span>${getStarsNumbers(repository)}</span>
                         </div>
                         <div class="branch">
-                            <img src="/assets/star.svg" alt="Star icon">
+                            <img src="/assets/git-branch.svg" alt="Star icon">
                             <span>${branchNumber}</span>
                         </div>
                         <p>${repository.language}</p>
@@ -70,6 +69,4 @@ function createCardProject(repository, branchNumber) {
 }
 
 let seeCards = document.querySelector('.see');
-console.log(seeCards);
-
 seeCards.addEventListener("click", createCards);
